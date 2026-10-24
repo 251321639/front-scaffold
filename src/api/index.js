@@ -1,10 +1,3 @@
-// 封装axios
-/*
-   1.封装可以简化我们接口调用的代码,可以去掉一些重复的代码
-   2.换掉Axios也是比较简单的
-   3.封装
-*/
-
 import axios from "axios";
 const request = (url = '', data = {}, method = "get", timeout = 5000) => {
     // ...
