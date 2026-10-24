@@ -1,8 +1,9 @@
 <script setup>
 import { reactive, ref, watch } from 'vue'
 import { User, Lock } from '@element-plus/icons-vue'
-import request from '../api'
+import { ElMessage } from 'element-plus'
 import { login } from '../api/login'
+import { CONFIG } from '../config'
 const loginInfo = reactive({
     username: '',
     password: ''
@@ -28,9 +29,18 @@ watch(loginInfo, () => {
         }
     })
 })
-const submitForm = () => {
-    login(loginInfo.username,loginInfo.password).then((response)=>{
+const submitForm = async () => {
+    await login(loginInfo.username, loginInfo.password).then((response) => {
         console.log("登录response:", response)
+        if (response.data.code == 200) {
+            ElMessage.success(response.data.message)
+            // ElMessage({
+            //     message: '登录成功',
+            //     type: 'success',
+            // })
+            localStorage.setItem(CONFIG.TOKEN_NAME, response.data.data.token)
+            console.log(localStorage.getItem(CONFIG.TOKEN_NAME))
+        }
     })
 }
 

@@ -1,8 +1,8 @@
-const API_CONFIG = {
+export const API_CONFIG = {
     loginApi: '/api/auth/login',
     logoutApi: '/api/auth/logout',
 };
 
-const CONFIG = {
+export const CONFIG = {
     TOKEN_NAME: 'Authorization',
 };
