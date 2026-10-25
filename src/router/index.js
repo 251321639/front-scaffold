@@ -3,7 +3,8 @@ import { CONFIG } from "../config";
 // const User = () => import('../views/User.vue')
 
 const Login = () => import("../view/Login.vue");
-const Index = () => import("../view/Index.vue");
+const Layout = () => import("../view/layout/Layout.vue");
+// const Index = () => import("../view/Index.vue");
 
 const routes = [
   {
@@ -13,8 +14,8 @@ const routes = [
   },
   {
     path: "/",
-    name: "Index",
-    component: Index,
+    name: "Layout",
+    component: Layout,
   },
 ];
 

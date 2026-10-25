@@ -51,21 +51,25 @@ const submitForm = async () => {
 </script>
 
 <template>
-    <el-card class="box-card">
-        <h2>后台管理系统</h2>
-        <el-form ref="loginRef" :rules="rules" :model="loginInfo">
-            <el-form-item prop="username" class="form-item">
-                <el-input placeholder="请输入用户名" :prefix-icon="User" v-model="loginInfo.username"></el-input>
-            </el-form-item>
-            <el-form-item prop="password" class="form-item">
-                <el-input placeholder="请输入密码" :prefix-icon="Lock" show-password v-model="loginInfo.password"
-                    type="password" autocomplete="off"></el-input>
-            </el-form-item>
-            <el-form-item>
-                <el-button style="margin: 10px auto 10px auto;" :disabled="loginButtonDisabled" type="primary" @click="submitForm(loginInfo)">登录</el-button>
-            </el-form-item>
-        </el-form>
-    </el-card>
+    <div id="login" style="width: 100vw;">
+        <el-card class="box-card">
+            <h2>后台管理系统</h2>
+            <el-form ref="loginRef" :rules="rules" :model="loginInfo">
+                <el-form-item prop="username" class="form-item">
+                    <el-input placeholder="请输入用户名" :prefix-icon="User" v-model="loginInfo.username"></el-input>
+                </el-form-item>
+                <el-form-item prop="password" class="form-item">
+                    <el-input placeholder="请输入密码" :prefix-icon="Lock" show-password v-model="loginInfo.password"
+                        type="password" autocomplete="off"></el-input>
+                </el-form-item>
+                <el-form-item>
+                    <el-button style="margin: 10px auto 10px auto;" :disabled="loginButtonDisabled" type="primary"
+                        @click="submitForm(loginInfo)">登录</el-button>
+                </el-form-item>
+            </el-form>
+        </el-card>
+    </div>
+
 </template>
 
 <style scoped>
@@ -77,8 +81,10 @@ const submitForm = async () => {
     padding: 18px 0;
 }
 
+
 .box-card {
     width: 480px;
+    margin: 0 auto;
 }
 
 .form-item {
